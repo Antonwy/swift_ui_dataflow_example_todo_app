@@ -8,9 +8,17 @@
 import SwiftUI
 
 struct ContentView: View {
+        
+    @StateObject var todosController = TodosController()
+    
     var body: some View {
-        Text("Hello, world!")
-            .padding()
+        NavigationView {
+            TodoList()
+        }
+        .onAppear {
+            todosController.loadTodos()
+        }
+        .environmentObject(todosController)
     }
 }
 
