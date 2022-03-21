@@ -13,7 +13,6 @@
 		9943426427E76B790094FA07 /* TodosViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9943426327E76B790094FA07 /* TodosViewModel.swift */; };
 		9943426927E76BF60094FA07 /* TodoList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9943426827E76BF60094FA07 /* TodoList.swift */; };
 		9943427327E76C7E0094FA07 /* Todo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9943427227E76C7E0094FA07 /* Todo.swift */; };
-		9943427727E76D5F0094FA07 /* JsonProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9943427627E76D5F0094FA07 /* JsonProvider.swift */; };
 		9943427C27E774630094FA07 /* CreateTodoSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9943427B27E774630094FA07 /* CreateTodoSheet.swift */; };
 		9943427E27E7768E0094FA07 /* CreateTodoViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9943427D27E7768E0094FA07 /* CreateTodoViewModel.swift */; };
 		9943428027E787C90094FA07 /* TodoItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9943427F27E787C90094FA07 /* TodoItem.swift */; };
@@ -25,11 +24,9 @@
 		9943424527E768A60094FA07 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		9943424627E768A90094FA07 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		9943424B27E768A90094FA07 /* swift_data_flow_example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = swift_data_flow_example.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		9943425327E768A90094FA07 /* macOS.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = macOS.entitlements; sourceTree = "<group>"; };
 		9943426327E76B790094FA07 /* TodosViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodosViewModel.swift; sourceTree = "<group>"; };
 		9943426827E76BF60094FA07 /* TodoList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodoList.swift; sourceTree = "<group>"; };
 		9943427227E76C7E0094FA07 /* Todo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Todo.swift; sourceTree = "<group>"; };
-		9943427627E76D5F0094FA07 /* JsonProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JsonProvider.swift; sourceTree = "<group>"; };
 		9943427B27E774630094FA07 /* CreateTodoSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateTodoSheet.swift; sourceTree = "<group>"; };
 		9943427D27E7768E0094FA07 /* CreateTodoViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateTodoViewModel.swift; sourceTree = "<group>"; };
 		9943427F27E787C90094FA07 /* TodoItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodoItem.swift; sourceTree = "<group>"; };
@@ -50,25 +47,15 @@
 		9943423E27E768A60094FA07 = {
 			isa = PBXGroup;
 			children = (
-				9943424327E768A60094FA07 /* Shared */,
-				9943425227E768A90094FA07 /* macOS */,
-				9943424C27E768A90094FA07 /* Products */,
-			);
-			sourceTree = "<group>";
-		};
-		9943424327E768A60094FA07 /* Shared */ = {
-			isa = PBXGroup;
-			children = (
 				9943428127E78CA80094FA07 /* custom_styles */,
-				9943427527E76D530094FA07 /* providers */,
 				9943426A27E76C400094FA07 /* models */,
 				9943426527E76BC20094FA07 /* views */,
 				9943426227E76B6A0094FA07 /* viewmodels */,
 				9943424427E768A60094FA07 /* swift_data_flow_exampleApp.swift */,
 				9943424527E768A60094FA07 /* ContentView.swift */,
 				9943424627E768A90094FA07 /* Assets.xcassets */,
+				9943424C27E768A90094FA07 /* Products */,
 			);
-			path = Shared;
 			sourceTree = "<group>";
 		};
 		9943424C27E768A90094FA07 /* Products */ = {
@@ -77,14 +64,6 @@
 				9943424B27E768A90094FA07 /* swift_data_flow_example.app */,
 			);
 			name = Products;
-			sourceTree = "<group>";
-		};
-		9943425227E768A90094FA07 /* macOS */ = {
-			isa = PBXGroup;
-			children = (
-				9943425327E768A90094FA07 /* macOS.entitlements */,
-			);
-			path = macOS;
 			sourceTree = "<group>";
 		};
 		9943426227E76B6A0094FA07 /* viewmodels */ = {
@@ -112,14 +91,6 @@
 				9943427227E76C7E0094FA07 /* Todo.swift */,
 			);
 			path = models;
-			sourceTree = "<group>";
-		};
-		9943427527E76D530094FA07 /* providers */ = {
-			isa = PBXGroup;
-			children = (
-				9943427627E76D5F0094FA07 /* JsonProvider.swift */,
-			);
-			path = providers;
 			sourceTree = "<group>";
 		};
 		9943428127E78CA80094FA07 /* custom_styles */ = {
@@ -204,7 +175,6 @@
 				9943427C27E774630094FA07 /* CreateTodoSheet.swift in Sources */,
 				9943426427E76B790094FA07 /* TodosViewModel.swift in Sources */,
 				9943427E27E7768E0094FA07 /* CreateTodoViewModel.swift in Sources */,
-				9943427727E76D5F0094FA07 /* JsonProvider.swift in Sources */,
 				9943428327E78CC10094FA07 /* CheckboxToggleStyle.swift in Sources */,
 				9943425427E768A90094FA07 /* swift_data_flow_exampleApp.swift in Sources */,
 				9943426927E76BF60094FA07 /* TodoList.swift in Sources */,

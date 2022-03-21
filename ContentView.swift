@@ -15,9 +15,6 @@ struct ContentView: View {
         NavigationView {
             TodoList()
         }
-        .onAppear {
-            todosViewModel.loadTodos()
-        }
         .environmentObject(todosViewModel)
     }
 }

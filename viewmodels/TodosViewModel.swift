@@ -9,17 +9,9 @@ import Foundation
 
 
 class TodosViewModel: ObservableObject {
-    @Published var todos: [Todo] = [] {
-        didSet {
-            jsonProvider.writeTodos(todos)
-        }
-    }
-    @Published var showAddTodoSheet = false
-    private let jsonProvider = JsonProvider()
+    @Published var todos: [Todo] = []
     
-    func loadTodos() {
-        todos = jsonProvider.readTodos()
-    }
+    @Published var showAddTodoSheet = false
     
     func addTodo(_ todo: Todo) {
         todos.append(todo)
