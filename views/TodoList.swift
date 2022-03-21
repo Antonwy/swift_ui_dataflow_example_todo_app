@@ -28,7 +28,7 @@ struct TodoList: View {
             }
         }
         .sheet(isPresented: $todosViewModel.showAddTodoSheet) {
-            CreateTodoSheet()
+            CreateTodoSheet(createTodoViewModel: todosViewModel.addTodoViewModel)
         }
     }
 }

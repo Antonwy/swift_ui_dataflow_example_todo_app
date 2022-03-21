@@ -9,7 +9,8 @@ import SwiftUI
 
 struct CreateTodoSheet: View {
     @Environment(\.dismiss) var dismiss
-    @StateObject var createTodoViewModel = CreateTodoViewModel()
+    
+    @ObservedObject var createTodoViewModel: CreateTodoViewModel
     
     @EnvironmentObject var todosViewModel: TodosViewModel
     
@@ -32,9 +33,10 @@ struct CreateTodoSheet: View {
             }
             .navigationTitle("Create Todo")
             .navigationBarItems(trailing: Button(action: {
+                createTodoViewModel.reset()
                 dismiss()
             }) {
-                Text("Cancel").bold().foregroundColor(.red)
+                Text("Discard").bold().foregroundColor(.red)
             })
         }
     }
@@ -42,6 +44,10 @@ struct CreateTodoSheet: View {
 
 struct CreateTodoSheet_Previews: PreviewProvider {
     static var previews: some View {
-        CreateTodoSheet()
+        Color.clear
+            .sheet(isPresented: .constant(true)) {
+                CreateTodoSheet(createTodoViewModel: CreateTodoViewModel())
+                    .environmentObject(TodosViewModel())
+            }
     }
 }

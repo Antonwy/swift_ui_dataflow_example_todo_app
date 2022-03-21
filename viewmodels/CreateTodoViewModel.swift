@@ -8,17 +8,25 @@
 import Foundation
 
 class CreateTodoViewModel: ObservableObject {
-    @Published var task: String = ""
-    private let today: Date = Date()
-    @Published var deadline: Date
-    @Published var priority: TaskPriority = .low
+    private static let initialTask = ""
     
-    init() {
-        self.deadline = Calendar.current.date(byAdding: .day, value: 1, to: today)!
+    private static var initialDeadline: Date { Calendar.current.date(byAdding: .day, value: 1, to: Date())! }
+    
+    private static let initialPriority = TaskPriority.low
+    
+    @Published var task: String = CreateTodoViewModel.initialTask
+    
+    @Published var deadline: Date = CreateTodoViewModel.initialDeadline
+    
+    @Published var priority: TaskPriority = CreateTodoViewModel.initialPriority
+    
+    func reset() {
+        self.task = Self.initialTask
+        self.deadline = Self.initialDeadline
+        self.priority = Self.initialPriority
     }
     
     func asTodo() -> Todo {
-        return Todo(task: task, priority: priority, deadline: deadline)
+        Todo(task: task, priority: priority, deadline: deadline)
     }
- 
 }
