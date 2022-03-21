@@ -9,16 +9,16 @@ import SwiftUI
 
 struct ContentView: View {
         
-    @StateObject var todosController = TodosController()
+    @StateObject var todosViewModel = TodosViewModel()
     
     var body: some View {
         NavigationView {
             TodoList()
         }
         .onAppear {
-            todosController.loadTodos()
+            todosViewModel.loadTodos()
         }
-        .environmentObject(todosController)
+        .environmentObject(todosViewModel)
     }
 }
 

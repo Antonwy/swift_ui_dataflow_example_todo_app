@@ -1,5 +1,5 @@
 //
-//  TodosController.swift
+//  TodosViewModel.swift
 //  swift_data_flow_example (iOS)
 //
 //  Created by Anton Wyrowski on 20.03.22.
@@ -8,7 +8,7 @@
 import Foundation
 
 
-class TodosController: ObservableObject {
+class TodosViewModel: ObservableObject {
     @Published var todos: [Todo] = [] {
         didSet {
             jsonProvider.writeTodos(todos)

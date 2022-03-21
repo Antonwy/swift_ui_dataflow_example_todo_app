@@ -9,28 +9,28 @@ import SwiftUI
 
 struct CreateTodoSheet: View {
     @Environment(\.dismiss) var dismiss
-    @ObservedObject var createTodoController = CreateTodoController()
+    @StateObject var createTodoViewModel = CreateTodoViewModel()
     
-    @EnvironmentObject var todosController: TodosController
+    @EnvironmentObject var todosViewModel: TodosViewModel
     
     var body: some View {
         NavigationView {
             List {
                 Section("Task") {
-                    TextField("Task...", text: $createTodoController.task)
-                    DatePicker("Deadline", selection: $createTodoController.deadline, in: Date()...)
-                    Picker("Priority", selection: $createTodoController.priority) {
+                    TextField("Task...", text: $createTodoViewModel.task)
+                    DatePicker("Deadline", selection: $createTodoViewModel.deadline, in: Date()...)
+                    Picker("Priority", selection: $createTodoViewModel.priority) {
                         ForEach(TaskPriority.allCases, id: \.self) {
                             Text($0.rawValue)
                         }
                     }
                     Button("Save") {
-                        todosController.addTodo(createTodoController.asTodo())
+                        todosViewModel.addTodo(createTodoViewModel.asTodo())
                         dismiss()
                     }
                 }
             }
-            .navigationTitle("Create todo")
+            .navigationTitle("Create Todo")
             .navigationBarItems(trailing: Button(action: {
                 dismiss()
             }) {

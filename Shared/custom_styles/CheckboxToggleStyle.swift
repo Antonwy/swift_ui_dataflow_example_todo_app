@@ -8,8 +8,6 @@
 import SwiftUI
 
 struct CheckboxToggleStyle: ToggleStyle {
-  @Environment(\.isEnabled) var isEnabled
-
   func makeBody(configuration: Configuration) -> some View {
     Button(action: {
       configuration.isOn.toggle()
@@ -21,6 +19,5 @@ struct CheckboxToggleStyle: ToggleStyle {
       }
     })
     .buttonStyle(PlainButtonStyle())
-    .disabled(!isEnabled)
   }
 }

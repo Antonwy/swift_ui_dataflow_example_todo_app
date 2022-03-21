@@ -19,7 +19,7 @@ struct TodoItem: View {
                     .padding(.bottom, 4)
                 Group {
                     Text("Deadline: ") +
-                    Text(todo.deadline.toReadableString() ?? "No date secified")
+                    Text(todo.deadline.formatted(date: .abbreviated, time: .omitted))
                         .bold()
                     Text("Priority: ") +
                     Text(todo.priority.rawValue)

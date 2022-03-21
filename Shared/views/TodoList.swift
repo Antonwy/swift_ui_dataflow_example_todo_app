@@ -8,26 +8,26 @@
 import SwiftUI
 
 struct TodoList: View {
-    @EnvironmentObject var todosController: TodosController;
+    @EnvironmentObject var todosViewModel: TodosViewModel;
     
     var body: some View {
         List {
-            ForEach($todosController.todos) { $todo in
+            ForEach($todosViewModel.todos) { $todo in
                 TodoItem(todo: $todo)
             }
-            .onDelete(perform: todosController.removeTodo)
+            .onDelete(perform: todosViewModel.removeTodo)
         }
         .navigationTitle("Todos")
         .toolbar {
             Button {
-                todosController.showAddTodoSheet = true
+                todosViewModel.showAddTodoSheet = true
             } label: {
                 Image(systemName: "plus.circle.fill")
                     .resizable()
                     .frame(width: 28, height: 28)
             }
         }
-        .sheet(isPresented: $todosController.showAddTodoSheet) {
+        .sheet(isPresented: $todosViewModel.showAddTodoSheet) {
             CreateTodoSheet()
         }
     }

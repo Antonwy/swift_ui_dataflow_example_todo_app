@@ -18,47 +18,42 @@ class JsonProvider {
     }
     
     func writeTodos(_ todos: [Todo]) {
+        guard let url = fileUrl else {
+            print("Bundle url invalid")
+            return
+        }
+        
         do {
-            if let url = fileUrl {
-                try JSONEncoder().encode(todos).write(to: url)
-            } else {
-                print("Bundle url invalid")
-            }
+            try JSONEncoder().encode(todos).write(to: url)
         } catch {
             print(error)
         }
     }
     
     func readTodos() -> [Todo] {
-        let json = readJson()
-        
-        if json == nil {
+        guard let json = readJson() else {
             print("Couldn't read todos from json!")
             return []
         }
         
         do {
-            let decodedTodos = try JSONDecoder().decode([Todo].self,
-                                                       from: json!)
-
-            return decodedTodos
+            return try JSONDecoder().decode([Todo].self,from: json)
         } catch {
             print("Error decoding json to todos!")
+            return []
         }
-        
-        return []
     }
     
     private func readJson() -> Data? {
+        guard let url = fileUrl else {
+            return nil
+        }
+
         do {
-            if let url = fileUrl,
-               let jsonData: Data? = try Data(contentsOf: url) {
-                return jsonData
-            }
+            return try Data(contentsOf: url)
         } catch {
             print(error)
+            return nil
         }
-        
-        return nil
     }
 }
