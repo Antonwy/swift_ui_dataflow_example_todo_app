@@ -353,7 +353,7 @@ It works exactly like `@ObservedObject`, except we don't have to provide its val
 
 `views/TodoList.swift` -> change to `@EnvironmentObject`, remove initializer argument
 
-Where are the `@EnvironmentObject's get the viewmodel from? -> we have to pass it into the view stack somewhere using the `View.environmentObject(_:)` function:
+Where are the `@EnvironmentObject`'s getting the viewmodel from? -> we have to pass it into the view stack somewhere using the `View.environmentObject(_:)` function:
 
 `ContentView.swift` -> add `.environmentObject(todosViewModel)`, remove initializer argument
 
