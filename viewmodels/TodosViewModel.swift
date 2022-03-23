@@ -13,7 +13,7 @@ class TodosViewModel: ObservableObject {
     
     @Published var showAddTodoSheet = false
     
-    @Published var addTodoViewModel = CreateTodoViewModel()
+    let addTodoViewModel = CreateTodoViewModel()
     
     func addTodo(_ todo: Todo) {
         todos.append(todo)

@@ -14,11 +14,11 @@ class CreateTodoViewModel: ObservableObject {
     
     private static let initialPriority = TaskPriority.low
     
-    @Published var task: String = CreateTodoViewModel.initialTask
+    @Published var task = CreateTodoViewModel.initialTask
     
-    @Published var deadline: Date = CreateTodoViewModel.initialDeadline
+    @Published var deadline = CreateTodoViewModel.initialDeadline
     
-    @Published var priority: TaskPriority = CreateTodoViewModel.initialPriority
+    @Published var priority = CreateTodoViewModel.initialPriority
     
     func reset() {
         self.task = Self.initialTask

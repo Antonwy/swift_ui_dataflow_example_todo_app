@@ -15,7 +15,7 @@
 		9943427327E76C7E0094FA07 /* Todo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9943427227E76C7E0094FA07 /* Todo.swift */; };
 		9943427C27E774630094FA07 /* CreateTodoSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9943427B27E774630094FA07 /* CreateTodoSheet.swift */; };
 		9943427E27E7768E0094FA07 /* CreateTodoViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9943427D27E7768E0094FA07 /* CreateTodoViewModel.swift */; };
-		9943428027E787C90094FA07 /* TodoItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9943427F27E787C90094FA07 /* TodoItem.swift */; };
+		9943428027E787C90094FA07 /* TodoItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9943427F27E787C90094FA07 /* TodoItemView.swift */; };
 		9943428327E78CC10094FA07 /* CheckboxToggleStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9943428227E78CC10094FA07 /* CheckboxToggleStyle.swift */; };
 /* End PBXBuildFile section */
 
@@ -29,7 +29,7 @@
 		9943427227E76C7E0094FA07 /* Todo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Todo.swift; sourceTree = "<group>"; };
 		9943427B27E774630094FA07 /* CreateTodoSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateTodoSheet.swift; sourceTree = "<group>"; };
 		9943427D27E7768E0094FA07 /* CreateTodoViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateTodoViewModel.swift; sourceTree = "<group>"; };
-		9943427F27E787C90094FA07 /* TodoItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodoItem.swift; sourceTree = "<group>"; };
+		9943427F27E787C90094FA07 /* TodoItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodoItemView.swift; sourceTree = "<group>"; };
 		9943428227E78CC10094FA07 /* CheckboxToggleStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckboxToggleStyle.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -80,7 +80,7 @@
 			children = (
 				9943426827E76BF60094FA07 /* TodoList.swift */,
 				9943427B27E774630094FA07 /* CreateTodoSheet.swift */,
-				9943427F27E787C90094FA07 /* TodoItem.swift */,
+				9943427F27E787C90094FA07 /* TodoItemView.swift */,
 			);
 			path = views;
 			sourceTree = "<group>";
@@ -171,7 +171,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				9943425627E768A90094FA07 /* ContentView.swift in Sources */,
-				9943428027E787C90094FA07 /* TodoItem.swift in Sources */,
+				9943428027E787C90094FA07 /* TodoItemView.swift in Sources */,
 				9943427C27E774630094FA07 /* CreateTodoSheet.swift in Sources */,
 				9943426427E76B790094FA07 /* TodosViewModel.swift in Sources */,
 				9943427E27E7768E0094FA07 /* CreateTodoViewModel.swift in Sources */,

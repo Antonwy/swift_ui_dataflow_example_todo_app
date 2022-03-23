@@ -8,12 +8,12 @@
 import SwiftUI
 
 struct TodoList: View {
-    @EnvironmentObject var todosViewModel: TodosViewModel;
+    @EnvironmentObject var todosViewModel: TodosViewModel
     
     var body: some View {
         List {
             ForEach($todosViewModel.todos) { $todo in
-                TodoItem(todo: $todo)
+                TodoItemView(todo: $todo)
             }
             .onDelete(perform: todosViewModel.removeTodo)
         }
@@ -23,8 +23,7 @@ struct TodoList: View {
                 todosViewModel.showAddTodoSheet = true
             } label: {
                 Image(systemName: "plus.circle.fill")
-                    .resizable()
-                    .frame(width: 28, height: 28)
+                    .font(.title2)
             }
         }
         .sheet(isPresented: $todosViewModel.showAddTodoSheet) {
@@ -34,7 +33,19 @@ struct TodoList: View {
 }
 
 struct TodoList_Previews: PreviewProvider {
+    static var model: TodosViewModel {
+        let viewmodel = TodosViewModel()
+        for todo in TodoItemView_Previews.mockTodos {
+            viewmodel.addTodo(todo)
+        }
+        return viewmodel
+    }
+    
+    
     static var previews: some View {
-        TodoList()
+        NavigationView {
+            TodoList()
+        }
+        .environmentObject(Self.model)
     }
 }

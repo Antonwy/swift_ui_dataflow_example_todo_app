@@ -47,7 +47,7 @@ struct CreateTodoSheet_Previews: PreviewProvider {
         Color.clear
             .sheet(isPresented: .constant(true)) {
                 CreateTodoSheet(createTodoViewModel: CreateTodoViewModel())
-                    .environmentObject(TodosViewModel())
             }
+            .environmentObject(TodosViewModel())
     }
 }
