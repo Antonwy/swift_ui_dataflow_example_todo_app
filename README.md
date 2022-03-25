@@ -396,9 +396,9 @@ struct CreateTodoSheet_Previews: PreviewProvider {
 
 I want the sheet to close automatically when I press "Save".
 
-We can use `@Environment(\.dismiss)` for that. Now, `@Environment` works just like `@EnvironmentObject`, but it does not use the type to identify the right object in the environment, but KeyPaths on a type called `EnvironmentValues`.
+We can use `@Environment(\.dismiss)` for that. Now, `@Environment` is to `@State`, what `@EnvironmentObject` is to `@StateObject`. However it does not use the type to identify the right object in the environment, but KeyPaths on a type called `EnvironmentValues`.
 
-The respective elements in the environment are usually provided by SwiftUI itself or other SwiftUI frameworks, but you can also define your own. However, if you're not developing a framework, `@EnvironmentObject` works just fine.
+The respective elements in the environment are usually provided by SwiftUI itself or other SwiftUI frameworks, but you can also define your own.
 
 Now, `@Environment(\.dismiss)` gives us a type that can be called as a function. This function dismisses the top-most view on the stack that defines a dismiss action. In our case the `sheet`.
 
